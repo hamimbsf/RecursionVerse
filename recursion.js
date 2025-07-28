@@ -189,3 +189,94 @@ countDown(5); */
 //   console.log(num);
 // }
 // naturalNumbers(10);
+
+// ✅ রিকার্শন দিয়ে ১ থেকে n পর্যন্ত সংখ্যার যোগফল বের করার ফাংশন
+/*
+function sum(val) {
+  // 🟢 Base case: যদি val === 1 হয়, তাহলে সরাসরি 1 return করব
+  // কারণ 1 পর্যন্ত গেলেই সব সংখ্যার যোগফল পাওয়া যাবে (n + n-1 + ... + 1)
+  if (val === 1) return 1;
+
+  // 🔁 Recursive call: প্রতিবার বর্তমান সংখ্যা যোগ করব পরের ছোট সংখ্যার sum এর সাথে
+  return val + sum(val - 1);
+}
+
+console.log(sum(5)); // ✅ Output: 15 (👉 5 + 4 + 3 + 2 + 1)
+ */
+// ❓ যদি আমরা base case এ শুধু return; করি তাহলে কী হবে?
+/*
+function wrongSum(val) {
+  // ⚠️ Base case: যদি val === 0 হলে কিছুই return না করি (default return হয় undefined)
+  if (val === 0) return;
+
+  // 🔁 Recursive call
+  return val + wrongSum(val - 1);
+}
+
+console.log(wrongSum(5)); // ❌ Output: NaN
+ */
+/*
+🔍 Stack walkthrough:
+wrongSum(5)
+=> 5 + wrongSum(4)
+=> 5 + 4 + wrongSum(3)
+=> 5 + 4 + 3 + wrongSum(2)
+=> 5 + 4 + 3 + 2 + wrongSum(1)
+=> 5 + 4 + 3 + 2 + 1 + wrongSum(0)
+=> 5 + 4 + 3 + 2 + 1 + undefined ❌
+=> NaN
+
+🛠️ তাই যদি base case val === 0 লিখি, তাহলে return করতে হবে 0 — না হলে result হবে NaN
+*/
+
+// ✅ আরেকটা valid base case যেটা ০ পর্যন্ত যায়:
+
+/* function sumToZero(val) {
+  // 🟢 Base case: যদি val === 0 হয়, তাহলে 0 return করব
+  if (val === 0) return 0;
+
+  // 🔁 Recursive call
+  return val + sumToZero(val - 1);
+}
+
+console.log(sumToZero(5)); // ✅ Output: 15
+ */
+
+// Factorial of n numbers by recursion
+
+/*
+function fact(val) {
+  if (val === 1) return val;
+  return val * fact(val - 1);
+}
+
+console.log(fact(5)); // 120 */
+
+// ভাই এক্ষেত্রে 0 অব্দি আনিস না কারন 0 থাকলে যাই থাকবে না কেন শূন্যই হবে;
+// তবে তুমি চাইলে if (val === 0) return 1/!0; করতে পারো তবে সেক্ষেত্রে অবধগম্য হইতে পারে তবে এটাও সঠিক
+
+// Fibonacchi series
+
+// let n = 10;
+// let first = 0;
+// let second = 1;
+// process.stdout.write(first + " " + second + " ");
+
+// for (let i = 1; i <= n - 2; i++) {
+//   let third = first + second;
+//   first = second;
+//   second = third;
+//   process.stdout.write(third + " ");
+// }
+
+function fibonacchi(val, first = 0, second = 1) {
+  if (val === 1) return;
+  let third = first + second;
+  process.stdout.write(third + " ");
+  fibonacchi(val - 1, second, third);
+}
+let n = 10;
+
+process.stdout.write(0 + " " + 1 + " ");
+
+fibonacchi(n - 2, 0, 1);
