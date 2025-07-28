@@ -20,14 +20,34 @@
 
 ---
 
-## 📁 File Structure
+## 📝 Files Overview
 
-.
-├── script.js # 🔍 Call Stack walkthrough (recursion execution flow)
-├── recursion.js # 📘 Recursion explained with multiple examples
-└── README.md # 📝 You're reading it!
+- `script.js`: Call Stack explained practically
+- `recursion.js`: Recursion core logic explained
+- Visuals: Supporting images
 
 ---
+
+## 🖼️ Visual Diagrams
+
+বুঝতে সুবিধার জন্য নিচের গ্রাফিকাল চিত্রগুলো যোগ করা হয়েছে:
+
+### 🔄 Call Stack Visualization
+
+![Call Stack Visual](./assets/call-stack-visual.png)
+
+### 🧠 Heap vs Stack Memory
+
+![Heap vs Stack](./assets/call-stack-visual.png)
+![Heap vs Stack Alt](./assets/heap-vs-stack-2.png)
+
+### 🔢 One to N Recursion Flow
+
+![One to N Recursion](./assets/one-to-n.png)
+
+### 📊 Stack Work Flow
+
+![Stack Work Flow](./assets/stack-work-flow.png)
 
 ## ✨ Highlights
 
